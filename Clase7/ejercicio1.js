@@ -13,6 +13,7 @@ class hero{
         if(name==null) this.name = "Héroe"; // por defecto
         else this.name = name;
     }
+    //Tambien podía usar dentro del constructor this.name='Heroe' || name
 }
 
 const hero1= new hero();

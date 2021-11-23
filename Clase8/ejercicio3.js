@@ -1,0 +1,1 @@
+// Teniendo en cuenta la misma conferencia anterior, necesitamos crear nombre de usuario a cada persona registrada dependiendo del nombre y el año en el que nacieron. Este nombre de usuario tiene que agregarse como una nueva propiedad llamada “userName

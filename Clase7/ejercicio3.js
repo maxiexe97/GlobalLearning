@@ -17,3 +17,4 @@ list1.forEach(function(item){
 })
 
 console.log(newArray);
+console.log(list1);
