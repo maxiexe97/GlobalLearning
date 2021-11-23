@@ -1,0 +1,165 @@
+/*defino un estilo general para todas las clase*/
+*{
+    margin: 0;
+}
+
+/*Para q el html y el body ocupen toda la página*/
+html, body{
+    height: 100%;
+}
+/* estilos del body*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: grey;
+}
+
+header{
+    display: block;
+    /*para que quede fijo*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    /*ocupacion a lo ancho: */
+    width: 100%;
+    background-color: rgba(124, 212, 116, 0.849);
+    /* definirle un tamaño determinado: */
+    padding: 10px;
+}
+
+/*estilos a los links de nav del header y del footer, visited es cuando ya se visitó la pagina, link es cuando es un link que referencia a otro*/
+nav a:visited,
+nav a:link{
+    color: black;
+    text-decoration: none;
+}
+
+nav > ul{
+    display: inline;
+    padding: 0;
+}
+
+nav > ul > li{
+    /*que los alinee en bloque*/
+    display: inline-block;
+    list-style: none;
+    margin: 0 5px 5px;    
+}
+
+main{
+    display: block;
+   background-image: url("images/fondo.jpg");
+    
+    padding-top: 3em;
+    padding-bottom: 3em;
+    min-height: 100%;
+    background-size: cover;
+}
+
+footer{
+    padding: 15px;
+    background-color: rgba(124, 212, 116, 0.849);
+    text-align: center;
+}
+
+aside, article{
+    padding: 2em;
+}
+aside{
+    text-align: center;
+    width: 20%;
+}
+article{
+    /*hasta donde llega el texto y salta de linea*/
+    width: 70%;
+    background-color: rgba(39, 172, 61, 0.267);
+    border-radius: 20px;
+    margin-right: 10px;
+}
+article>div{
+
+    background-color: rgba(255, 195, 237, 0.616);
+}
+
+@media only screen and (min-width: 780px) {
+    main{
+        display: flex;
+    }
+    aside{
+        /*margin-left: 1%;*/
+        text-align: center;
+    }
+}
+
+/* Clase 11/11 */
+.logo{
+    max-width: 100%;
+    max-height: 100%;
+}
+.banner{
+    max-width: 100%;
+    max-height: 60%;
+    margin-left: 5%;
+    border-radius: 10px;
+    text-align: center;
+}
+h1{
+    color: rgba(33, 109, 33, 0.849);
+    font: oblique bold 120% cursive; 
+    font-size: 1.5em;
+    margin-top: 0.5em;
+    text-align: center;
+    background-color: rgba(250, 210, 217, 0.863);
+    border-radius: 8px;
+}
+
+.subtitle{
+    color: rgba(4, 48, 4, 0.945);
+    margin-left: 2%;
+    font: oblique 120% cursive;
+    font-size: 1em;
+    padding: 0.2em;
+    /*border: solid 0.1em rgb(56, 74, 236);*/
+}
+.contacto{
+    background-color:rgba(243, 219, 223, 0.904);
+    border-radius: 6%;
+    text-align: center;
+}
+
+/* ******* CATALOGO *******  */
+.element{
+    width: 250px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(235, 215, 229);
+    border-radius: 4%;
+   /* border: solid 1px blue;*/
+}
+
+.image-element{
+    max-width: 100%;
+}
+
+.element-information .title{
+    font-weight: bold;
+}
+.element-information .price{
+    text-align: right;
+}
+
+.element-information{
+    display: flex;
+    max-width: 100%;
+    justify-content: space-between;
+    margin-bottom: 0.2em;
+}
+.element button{
+    background-color: rgba(124, 212, 116, 0.849);
+    padding: 10px;
+    border: solid 1px rgba(17, 155, 5, 0.849);
+    border-radius: 4px;
+    margin-top: 0.5em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
