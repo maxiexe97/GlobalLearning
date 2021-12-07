@@ -22,32 +22,57 @@
 
         <aside><img href="logo1" class="logo" src="images/logo1.png" alt="MeLoLi"></aside>
         <article>
-            <h1>Order</h1>
-            <div class="order-selected">
-                <img class="image-element" src="" alt="elemento">
-                <div class="element-information">
-                    <div class="title">
-                    
+            <h1>Orden</h1>
+            <div class="order-page">
+                <div class="order-selected">
+                    <img class="image-element" src="" alt="elemento">
+                    <div class="element-information">
+                        <div class="title"></div>
+                        <div class="price"></div>
                     </div>
-                    <div class="price">
-                      
-                    </div>
-                </div>
-            </div>
+                </div> 
 
-            <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="POST">
-                <div class="input-group">
-                    <div>
-                        <label for="first-name"> First Name</label>
-                    </div>
-                    <div>
-                        <input type="text" name="first-name" id="first-name">
-                    </div>
+                <div>
+                    <form class="form" action="https://jkorpela.fi/cgi-bin/echo.cgi" method="POST">
+                        <h2> Completar Pedido </h2>
+                        <div class="input-group">
+                            <div>
+                                <label for="first-name"> Nombre: </label>
+                                <input type="text" name="first-name" id="first-name" required>
+                            </div>
+                            <div>
+                                <label for="last-name"> Apellido: </label>
+                                <input type="text" name="last-name"  id="last-name">
+                            </div>
+                            <div>
+                                <label for="direction"> Dirección: </label>
+                                <input type="text" name="direction" placeholder="Ingrese calle y número" id="direction" required>
+                            </div>
+                            <div>
+                                <label for="cantidad"> Cantidad: </label>
+                                <input type="number" name="cantidad" placeholder="0" min="1" max=10 id="Cantidad:" value="1">
+                            </div>
+                            <div>
+                                <label for="email"> Correo electrónico: </label>
+                                <input type="email" id="email" placeholder="email@gmail.com" size="20" required multiple>
+                            </div>
+                            <div>
+                                <label for="description"> Mensaje: </label>
+                                <input type="text" placeholder="Puede dejar un mensaje opcional" name="description"  id="description">
+                            </div>
+                            <div class="buttons">
+                                <button type="reset" value="Reset"> Borrar </button>
+                                <button type="enviar" value="Enviar"> Enviar Pedido</button>
+                            </div>   
+                        </div>    
+                    </form> 
+                    <div class="volver">
+                        <form method="get" action="catalogo.html">
+                            <input class="bt" type="submit" value="Volver al catálogo" />
+                        </form>
+                    </div> 
                 </div>
-                <input type="reset" value="Reset">
-                <input type="submit" value="Order">
-            </form> 
-                
+            </div> 
         </article>
     </main>
 
@@ -59,6 +84,16 @@
                 <li><a href="contact.html"> Contacto </a></li>
             </ul>
         </nav>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <div class="col-md-12">
+            <ul class="social-network social-circle">
+                <li><a href="https://feeds.feedburner.com/LaGacetaUltimoMomento?format=xml" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                <li><a href="https://www.facebook.com/lagaceta" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/lagacetatucuman" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+            </ul>				
+        </div>
     </footer>
 </body>
 <script>
@@ -67,11 +102,10 @@
         if(order){
             const catalogOrder= JSON.parse(order);
             const orderSelected = document.querySelector(".order-selected");
-            console.log(orderSelected)
             orderSelected.querySelector(".title").innerText = catalogOrder.title;
             orderSelected.querySelector(".price").innerText = catalogOrder.price;
-            const img = orderSelected.querySelector("img");
-            img.setAttribute("src",'images/${catalogOrder.id}.png');
+            const img = orderSelected.querySelector("img")
+            img.setAttribute("src",`images/${catalogOrder.id}.jpg`);
         }
     });
 </script>
